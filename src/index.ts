@@ -144,7 +144,6 @@ async function main() {
     const since = dayjs("2019-10-01", "YYYY-MM-DD").subtract(1, "y").toISOString();
     const until = dayjs("2020-10-01", "YYYY-MM-DD").subtract(1, "y").toISOString();
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN!;
-    console.log(`user:azu user:efcl pushed:>=${since} pushed:<=${until}`);
     const query = `user:azu user:efcl user:jser user:almin user:textlint user:textlint-ja user:textlint-rule user:JXA-userland user:js-primer user:ecmascript-daily user:asciidwango user:secretlint user:honkit`;
     const repositories = await fetchRepositories({
         GITHUB_TOKEN: GITHUB_TOKEN,
