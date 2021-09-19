@@ -1,0 +1,57 @@
+{
+  "name": "github-commit-count-per-repository",
+  "version": "1.0.0",
+  "description": "Count commit per GitHub Repository.",
+  "homepage": "https://github.com/azu/github-commit-count-per-repository",
+  "bugs": {
+    "url": "https://github.com/azu/github-commit-count-per-repository/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/github-commit-count-per-repository.git"
+  },
+  "license": "MIT",
+  "author": "azu",
+  "main": "lib/github-commit-count-per-repository.js",
+  "types": "lib/github-commit-count-per-repository.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "scripts": {
+    "main": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "prepare": "git config --local core.hooksPath .githooks",
+    "build": "tsc -p .",
+    "watch": "tsc -p . --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "singleQuote": false,
+    "printWidth": 120,
+    "tabWidth": 4,
+    "trailingComma": "none"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "@octokit/graphql": "^4.8.0",
+    "dayjs": "^1.10.7"
+  }
+}
